@@ -1,0 +1,18 @@
+def format_new_order_message(order_data):
+    message = f"#id {order_data['id']}\n\n"
+    message += f"Новая заявка:\n\n"
+    message += f"📦 Товар: {order_data['product']['name']}\n"
+    message += f"💰 Стоимость: {order_data['product']['cost']} руб.\n\n"
+    message += f"📍 Адрес доставки:\n"
+    message += f"   Улица: {order_data['address']['street']}\n"
+    message += f"   Дом: {order_data['address']['house']}\n"
+    message += f"   Корпус: {order_data['address']['housing']}\n"
+    message += f"   Квартира: {order_data['address']['apartment']}\n"
+    message += f"   Ссылка: {order_data['address']['link']}\n\n"
+    message += f"👤 Клиент: {order_data['client']['first_name']} {order_data['client']['last_name']}\n"
+    message += f"📞 Телефон: {order_data['client']['phone']}\n"
+    message += f"📧 Email: {order_data['client']['contact']}\n\n"
+    message += f"💳 Оплата при получении: {'Да' if order_data['payment_upon_receipt'] else 'Нет'}\n"
+    message += f"💵 Стоимость доставки: {order_data['delivery_cost']} руб.\n"
+    message += f"💲 Итоговая стоимость: {order_data['total_cost']} руб.\n"
+    return message

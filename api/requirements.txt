@@ -1,0 +1,4 @@
+flask~=3.0.3
+python-dotenv~=1.0.1
+pyTelegramBotAPI~=4.17.0
+flask-cors~=3.0.10
