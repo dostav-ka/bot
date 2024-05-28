@@ -1,3 +1,5 @@
+import time
+
 import telebot
 
 import config as cfg
@@ -51,4 +53,9 @@ def handle_my_orders(message):
 
 
 if __name__ == '__main__':
-    bot.polling(none_stop=True)
+    while True:
+        try:
+            bot.polling(none_stop=True)
+        except Exception as e:
+            print(f"Error occurred: {e}")
+            time.sleep(1)
